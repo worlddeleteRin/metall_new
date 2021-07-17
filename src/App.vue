@@ -1,26 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+	<HeaderComponent />
+  <!--<img alt="Vue logo" src="./assets/logo.png"> -->
+	<router-view :key="$route.fullPath"></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HeaderComponent from './components/HeaderComponent.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+	HeaderComponent,
+  },
+  beforeMount() {
+	this.$store.dispatch("initTheme");
+  },
+  computed: {
+	currentTheme () {
+		return this.$store.state.theme.theme
+	}
+  },
+  watch: {
+	currentTheme(newTheme) {
+		newTheme === "light"
+		? document.querySelector("html").classList.remove("dark")
+		: document.querySelector("html").classList.add("dark")
+	}
+  },
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
