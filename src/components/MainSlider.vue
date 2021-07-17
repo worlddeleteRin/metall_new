@@ -6,7 +6,7 @@
 	:pagination=" { clickable: true} "
     @swiper="onSwiper"
     @slideChange="onSlideChange"
-	class="w-4/5"
+	class="w-4/5 max-w-screen-xl"
   >
 
     <swiper-slide
@@ -17,7 +17,7 @@
 	:key="i"
 	>
 		<img 
-		class="max-h-80 border-8 border-red-900"
+		class="max-h-80 border-8 border-red-900 w-full object-cover"
 		:src="image_link"/>
 	</swiper-slide>
 
