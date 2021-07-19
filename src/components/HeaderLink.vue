@@ -11,8 +11,17 @@
 
 
 <script>
+
 export default {
 	name: "HeaderLink", 
-	props: ["link_name", "link_to", "is_active"],
+	props: {
+		link_name: String,
+		link_to: String,
+		is_active: Boolean,
+	},
+	setup() {
+		return {
+		}
+	},
 }
 </script>
