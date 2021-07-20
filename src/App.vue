@@ -1,4 +1,5 @@
 <template>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined">
 	<HeaderComponent />
   <!--<img alt="Vue logo" src="./assets/logo.png"> -->
 	<router-view :key="$route.fullPath"></router-view>

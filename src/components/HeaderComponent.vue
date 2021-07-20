@@ -2,18 +2,37 @@
   <Popover open="true" class="relative mx-auto bg-whitem max-w-screen-xl">
     <div class="px-4 mx-auto max-w-sceen-xl sm:px-6">
       <div class="flex items-center justify-between py-6 border-b-2 border-gray-100 md:justify-around md:space-x-10">
+		<!-- Mobile menu start -->
+		<div class="-my-2 -mr-2 md:hidden">
+          <PopoverButton class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <span class="sr-only">Open menu</span>
+            <MenuIcon class="w-6 h-6" aria-hidden="true" />
+          </PopoverButton>
+        </div>
+		
         <div class="flex justify-start">
           <a href="#">
             <span class="sr-only">Workflow</span>
             <img class="w-auto h-8 sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="" />
           </a>
         </div>
-        <div class="-my-2 -mr-2 md:hidden">
-          <PopoverButton class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-            <span class="sr-only">Open menu</span>
-            <MenuIcon class="w-6 h-6" aria-hidden="true" />
-          </PopoverButton>
-        </div>
+		
+		<span class="inline-flex md:hidden">
+		<it-badge
+		value="3"
+		type="success"
+		>
+			<Icon 
+			class="cursor-pointer h-7"
+			icon="akar-icons:shopping-bag"
+			width="25"
+			height="25"	
+			color="black"
+			/>
+		</it-badge>
+		</span>
+		<!-- Mobile header menu content end -->
+       
         <PopoverGroup as="nav" class="hidden md:flex space-x-2">
 
 			<HeaderLink
@@ -73,18 +92,35 @@
 			</button>
         </div>
 		<div class="hidden md:flex">
-			<ShoppingBagIcon 
-			class="items-center justify-end w-8 h-10 text-black cursor-pointer"
-			/>
-			<UserCircleIcon
-			class="items-center justify-end w-8 h-10 text-black cursor-pointer"
-			/>
+			<router-link :to="'/cart'"
+			class="w-10">
+				<it-badge value="3" type="success">
+					<Icon 
+					class="cursor-pointer"
+					icon="clarity:shopping-bag-line"
+					width="30"
+					height="30"	
+					color="black"
+					/>
+				</it-badge>
+			</router-link>
+			<router-link 
+			:to="'/profile'"
+			class="w-10">
+				<Icon 
+				class="cursor-pointer"
+				icon="iconoir:profile-circled"
+				width="30"
+				height="30"	
+				color="black"
+				/>
+			</router-link>
 		</div>
       </div>
     </div>
 
     <transition enter-active-class="duration-200 ease-out" enter-from-class="opacity-0 scale-95" enter-to-class="opacity-100 scale-100" leave-active-class="duration-100 ease-in" leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
-      <PopoverPanel focus class="absolute inset-x-0 top-0 p-2 transition transform origin-top-right md:hidden">
+      <PopoverPanel focus class="absolute inset-x-0 top-0 z-50 p-2 border-4 border-red-200 transition transform origin-top-right md:hidden">
         <div class="bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-y-2 divide-gray-50">
           <div class="px-5 pt-5 pb-6">
             <div class="flex items-center justify-between">
@@ -109,20 +145,6 @@
               </nav>
             </div>
           </div>
-          <div class="px-5 py-6 space-y-6">
-            <div class="grid grid-cols-2 gap-y-4 gap-x-8">
-              <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
-                Pricing
-              </a>
-
-              <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">
-                Docs
-              </a>
-              <a v-for="item in resources" :key="item.name" :href="item.href" class="text-base font-medium text-gray-900 hover:text-gray-700">
-                {{ item.name }}
-              </a>
-            </div>
-          </div>
         </div>
       </PopoverPanel>
     </transition>
@@ -130,6 +152,7 @@
 </template>
 
 <script>
+import { Icon } from '@iconify/vue';
 import HeaderLink from './HeaderLink.vue';
 import { Popover, PopoverButton, PopoverGroup, PopoverPanel } from '@headlessui/vue'
 import {
@@ -144,11 +167,13 @@ import {
   ViewGridIcon,
   XIcon,
 	ShoppingBagIcon,
+	ShoppingCartIcon,
 	UserCircleIcon,
 } from '@heroicons/vue/outline'
 import { ChevronDownIcon, 
 
 } from '@heroicons/vue/solid'
+// google material icons import 
 
 const solutions = [
   {
@@ -208,8 +233,10 @@ const recentPosts = [
 export default {
 	name: "HeaderComponent",
   components: {
+	Icon,
 	HeaderLink,
 	ShoppingBagIcon,
+	ShoppingCartIcon,
 	UserCircleIcon,
   // icons here
     Popover,
