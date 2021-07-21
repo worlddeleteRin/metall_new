@@ -2,54 +2,53 @@
 <div
 class="mx-auto border border-black max-w-screen-xl"
 >
-	<div>
-		<button
-		@click="makeList">
-			make list 
-		</button>
-		<button
-		@click="makeGrid">
-			make grid 
-		</button>
-	</div>
 	<div
-		:class="[products_layout == 'list'? 'block':'grid grid-cols-4',]">
-		<product-card-view
-		v-for="i in 10"
-		:key="i"
-		/>	
+	class="flex"
+	>	
+		<products-filters 
+		class="flex-shrink-0 hidden border-4 border-green-500 md:flex w-52"
+		/>
+		<div
+		class="w-full border-4 border-blue-600"
+		>	
+			<products-list-top-row />
+			<div
+				:class="[products_layout == 'list'? 'block':'flex flex-wrap justify-center', 'border-4 border-red-600 w-full']">
+				<product-card-base
+				v-for="i in 10"
+				:key="i"
+				/>	
+			</div>
+		</div>
 	</div>
+
+
 </div>
 	
 </template>
 
 <script>
-import { computed } from 'vue';
-import { useStore } from 'vuex';
 
-import ProductCardView from './ProductCardView.vue';
+import { useStore } from 'vuex';
+import { computed } from 'vue';
+import ProductCardBase from './ProductCardBase.vue';
+import ProductsListTopRow from './ProductsListTopRow.vue';
+import ProductsFilters from './ProductsFilters.vue';
+
 
 export default {
 	name: "ProductsList",
 	components: {
-		ProductCardView,
+		ProductCardBase,
+		ProductsListTopRow,
+		ProductsFilters,
 	},
 	setup () {
-		// initialize store access
 		const store = useStore()
 		const products_layout = computed(() => store.state.ecommerce.config.products_layout)
-		function makeList() {
-			console.log('button make list is pressed')
-			store.commit('setProductsLayout', "list")
-		}
-		function makeGrid() {
-			console.log('make grid button pressed')
-			store.commit('setProductsLayout', "grid")
-		}
+		// initialize store access
 		return {
 			products_layout,
-			makeList,
-			makeGrid,
 		}
 	}
 }
