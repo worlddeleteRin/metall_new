@@ -12,6 +12,7 @@ class="mx-auto border border-black max-w-screen-xl"
 		class="w-full border-4 border-blue-600"
 		>	
 			<products-list-top-row />
+
 			<div
 				:class="[products_layout == 'list'? 'block':'flex flex-wrap justify-center', 'border-4 border-red-600 w-full']">
 				<product-card-base
@@ -19,6 +20,7 @@ class="mx-auto border border-black max-w-screen-xl"
 				:key="i"
 				/>	
 			</div>
+
 		</div>
 	</div>
 
@@ -53,3 +55,4 @@ export default {
 	}
 }
 </script>
+

@@ -11,13 +11,13 @@
 
     <swiper-slide
 	:centeredSlides="true"
-	class="border-4 text-center flex justify-center"
+	class="flex justify-center text-center border-4"
 	style=""
 	v-for="i in 10"
 	:key="i"
 	>
 		<img 
-		class="max-h-80 border-8 border-red-900 w-full object-cover"
+		class="object-cover w-full border-8 border-red-900 max-h-80"
 		:src="image_link"/>
 	</swiper-slide>
 

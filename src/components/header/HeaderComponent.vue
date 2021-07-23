@@ -84,13 +84,15 @@
             </transition>
           </Popover>
         </PopoverGroup>
-        <div class="items-center justify-end hidden md:flex">
+        <!-- <div class="items-center justify-end hidden md:flex">
 			<button 
 			class="px-3 py-2 tracking-wide text-white bg-blue-500 rounded hover:bg-blue-700 transition duration-100"
 			> 
 			Оставить заявку	
 			</button>
-        </div>
+        </div> -->
+		<header-search-input />
+
 		<div class="hidden md:flex">
 			<router-link :to="'/cart'"
 			class="w-10">
@@ -154,6 +156,7 @@
 <script>
 import { Icon } from '@iconify/vue';
 import HeaderLink from './HeaderLink.vue';
+import HeaderSearchInput from './HeaderSearchInput.vue';
 import { Popover, PopoverButton, PopoverGroup, PopoverPanel } from '@headlessui/vue'
 import {
   BookmarkAltIcon,
@@ -233,12 +236,14 @@ const recentPosts = [
 export default {
 	name: "HeaderComponent",
   components: {
+  // custom components,
+	HeaderSearchInput,
+  // icons here
 	Icon,
 	HeaderLink,
 	ShoppingBagIcon,
 	ShoppingCartIcon,
 	UserCircleIcon,
-  // icons here
     Popover,
     PopoverButton,
     PopoverGroup,

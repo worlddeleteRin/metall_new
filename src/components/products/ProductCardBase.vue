@@ -1,10 +1,14 @@
 <template>
+
+
 	<product-card-list-view 
 	v-if="products_layout == 'list'"
 	/>
+
 	<product-card-grid-view 
 	v-if="products_layout == 'grid'"
 	/>
+
 </template>
 
 <script>
@@ -28,3 +32,4 @@ export default {
 	}
 }
 </script>
+

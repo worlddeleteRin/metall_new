@@ -7,7 +7,7 @@
 
 <script>
  import MainSlider from '../components/MainSlider.vue';
- import ProductsList from '../components/ProductsList.vue';
+ import ProductsList from '../components/products/ProductsList.vue';
 export default {
   name: 'MainPage',
   props: {
