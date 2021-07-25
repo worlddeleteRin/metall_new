@@ -2,15 +2,21 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined">
 	<HeaderComponent />
   <!--<img alt="Vue logo" src="./assets/logo.png"> -->
+	<div class="min-h-screen">
 	<router-view :key="$route.fullPath"></router-view>
+	</div>
+
+	<BaseFooterComponent />
 </template>
 
 <script>
 import HeaderComponent from './components/header/HeaderComponent.vue';
+import BaseFooterComponent from './components/footer/BaseFooterComponent.vue';
 export default {
   name: 'App',
   components: {
 	HeaderComponent,
+	BaseFooterComponent,
   },
   beforeMount() {
 	this.$store.dispatch("initTheme");
