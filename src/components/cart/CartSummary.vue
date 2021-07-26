@@ -1,11 +1,12 @@
 <template>
 <div class="px-4 py-5 rounded">
 	<!-- cart go checkout button -->
-	<div class="flex justify-center w-full py-4 mx-auto bg-green-500 rounded cursor-pointer hover:bg-green-600 transition">
+	<router-link :to="'/checkout'"
+	class="flex justify-center w-full py-4 mx-auto bg-green-500 rounded cursor-pointer hover:bg-green-600 transition">
 		<span class="text-sm font-bold text-white select-none">
 			Перейти к оформлению	
 		</span>
-	</div>
+	</router-link>
 	<!-- eof cart go checkout button -->
 	<div class="py-2 text-xs font-medium text-gray-500">
 		Доступные способы доставки и оплаты можно выбрать при оформлении заказа

@@ -17,6 +17,8 @@
 	class="px-4"
 	/>
 
+	<!-- 
+
 	<div class="px-4 mb-5 text-xl font-medium mt-7">
 		Товары из этой же категории
 	</div>
@@ -30,6 +32,9 @@
 	<base-products-slider 
 	class="px-4"
 	/>
+
+	-->
+
 </div>
 </template>
 
@@ -40,15 +45,18 @@ import ProductPageImageBlock from '../components/products/ProductPageImageBlock.
 import ProductPageDetailBlock from '../components/products/ProductPageDetailBlock.vue';
 import ProductPageFeatureBlock from '../components/products/ProductPageFeatureBlock.vue';
 // products slider import 
-import BaseProductsSlider from '../components/products/BaseProductsSlider.vue';
+// import BaseProductsSlider from '../components/products/BaseProductsSlider.vue';
+
+// testing here
 export default {
 	name: "BaseProductPage",	
 	components: {
 		ProductPageImageBlock,
 		ProductPageDetailBlock,
 		ProductPageFeatureBlock,
-		BaseProductsSlider,
+//		BaseProductsSlider,
 	},
+
 	setup () {
 		const route = useRoute()
 		const product_id = route.params.id
@@ -56,6 +64,8 @@ export default {
 		return {
 			product_id,
 		}
-	}
+	},
+	methods: {
+	},
 }
 </script>

@@ -2,7 +2,7 @@
   <Popover open="true" class="relative mx-auto bg-whitem max-w-screen-xl">
     <div class="px-4 mx-auto max-w-sceen-xl sm:px-6">
       <div class="flex items-center justify-between py-6 border-b-2 border-gray-100 md:justify-around md:space-x-10">
-		<!-- Mobile menu start -->
+		<!-- mobile menu start -->
 		<div class="-my-2 -mr-2 md:hidden">
           <PopoverButton class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
             <span class="sr-only">Open menu</span>
@@ -12,12 +12,13 @@
 		
         <div class="flex justify-start">
           <a href="#">
-            <span class="sr-only">Workflow</span>
+            <span class="sr-only">LOGO</span>
             <img class="w-auto h-8 sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="" />
           </a>
         </div>
 		
-		<span class="inline-flex md:hidden">
+		<router-link :to="'/cart'"
+		class="inline-flex md:hidden">
 		<it-badge
 		value="3"
 		type="success"
@@ -30,7 +31,7 @@
 			color="black"
 			/>
 		</it-badge>
-		</span>
+		</router-link>
 		<!-- Mobile header menu content end -->
        
         <PopoverGroup as="nav" class="hidden md:flex space-x-2">

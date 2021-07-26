@@ -3,7 +3,7 @@
 <div class="cursor-pointer"
 >
 	<Icon icon="carbon:trash-can"
-	class="text-gray-500 hover:text-red-500 transition"
+	color="gray"
 	width="23"
 	/>
 </div>

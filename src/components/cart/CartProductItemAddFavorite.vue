@@ -5,8 +5,8 @@
 	@click="toggleFavorite"
 >
 	<Icon icon="ic:round-favorite-border"
-	color="black"
-	width="20"
+	color="gray"
+	width="23"
 	/>
 </div>
 <div class="absolute cursor-pointer right-2 top-2"
@@ -15,13 +15,14 @@
 >
 	<Icon icon="ic:round-favorite"
 	color="red"
-	width="20"
+	width="23"
 	/>
 </div>
 <!-- eof add favorite block -->
 </template>
 
 <script>
+	
 import { Icon } from '@iconify/vue';
 import { ref } from 'vue';
 export default {

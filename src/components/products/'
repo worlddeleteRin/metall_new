@@ -1,12 +1,11 @@
 <template>
 
+
 	<product-card-list-view 
-	:product="product"
 	v-if="products_layout == 'list'"
 	/>
 
 	<product-card-grid-view 
-	:product="product"
 	v-if="products_layout == 'grid'"
 	/>
 

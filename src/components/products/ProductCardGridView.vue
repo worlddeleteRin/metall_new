@@ -10,12 +10,16 @@
             </div>
             <div class="relative">
                 <div class="flex flex-row items-end">
-                    <div class="mt-1 text-xl font-semibold text-pink-600">1130₽</div>
-                    <div class="ml-3 text-sm line-through">1320₽</div>
+                    <div class="mt-1 text-xl font-semibold text-pink-600">
+						{{ product.price }} &#x20bd;
+					</div>
+                    <div class="ml-3 text-sm line-through">
+						{{ product.price }}  &#x20bd;
+					</div>
                 </div>
                 <div class="mt-1 cursor-pointer hover:text-blue-900">
 					<router-link :to="'/product/123'">
-						Рюкзак PIRAMIDA
+						{{ product.name }}
 					</router-link>	
 				</div>
 				<div class="flex justify-center mt-4 mb-2 text-center">
@@ -34,6 +38,9 @@ import { onMounted } from 'vue';
 	
 export default {
 	name: "ProductCardGridView",
+	props: {
+		product: {},
+	},
 	setup() {
 	onMounted(() => {
 		console.log('grid view product component is mounted')

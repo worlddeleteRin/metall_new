@@ -1,6 +1,6 @@
 <template>
 	<div
-	class="flex justify-between border-4 border-red-300"
+	class="flex items-center justify-between px-2 border-4 border-red-300"
 	>
 		<div>
 			test content
@@ -10,20 +10,22 @@
 			@click="makeList"
 			>
 				<Icon
-					icon="ic:round-view-list"
-					width="25"
-					height="25"
-					:color="isActive('list') ? 'black':'#a3a3a3'"
+					:class="[isActive('list') ? 'text-blue-600 bg-blue-200':'text-gray-400 bg-gray-200',
+					'rounded p-1 transition mr-1']"
+					icon="ant-design:unordered-list-outlined"
+					width="30"
+					height="30"
 				/>
 			</button>
 			<button
 			@click="makeGrid"
 			>
 			<Icon
+				:class="[isActive('grid') ? 'text-blue-600 bg-blue-200':'text-gray-400 bg-gray-200',
+				'rounded p-1 transition']"
 				icon="heroicons-solid:view-grid"
-				width="25"
-				height="25"
-				:color="isActive('grid') ? 'black':'#a3a3a3'"
+				width="30"
+				height="30"
 			/>
 		</button>
 		</div>

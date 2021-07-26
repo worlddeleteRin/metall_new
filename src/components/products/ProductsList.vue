@@ -16,8 +16,9 @@ class="mx-auto border border-black max-w-screen-xl"
 			<div
 				:class="[products_layout == 'list'? 'block':'flex flex-wrap justify-center', 'border-4 border-red-600 w-full']">
 				<product-card-base
-				v-for="i in 10"
-				:key="i"
+				v-for="product in products"
+				:key="product.id"
+				:product="product"
 				/>	
 			</div>
 
@@ -45,9 +46,16 @@ export default {
 		ProductsListTopRow,
 		ProductsFilters,
 	},
+	props: {
+		products: [],
+	},
 	setup () {
 		const store = useStore()
 		const products_layout = computed(() => store.state.ecommerce.config.products_layout)
+
+		// test code is here
+		// eof test code is here
+
 		// initialize store access
 		return {
 			products_layout,
