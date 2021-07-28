@@ -4,6 +4,8 @@ import CheckoutPage from './pages/CheckoutPage.vue';
 import ProfilePage from './pages/ProfilePage.vue';
 import BaseProductPage from './pages/BaseProductPage.vue';
 import OrderCreatedPage from './pages/OrderCreatedPage.vue'; 
+import CataloguePage from './pages/CataloguePage.vue';
+import CategoryPage from './pages/CategoryPage.vue';
 
 const main_pages = [
 	{
@@ -22,6 +24,11 @@ const main_pages = [
 		path: '/profile',
 		component: ProfilePage,
 	},
+	{
+		path: "/catalogue",
+		name: "catalogue",
+		component: CataloguePage,
+	},
 ]
 const secondary_pages = [
 	{
@@ -34,6 +41,10 @@ const dynamic_routes = [
 	{
 		path: '/product/:id',
 		component: BaseProductPage,
+	},
+	{
+		path: '/category/:id',
+		component:	CategoryPage,
 	},
 ]
 

@@ -22,6 +22,10 @@ class="mx-auto border border-black max-w-screen-xl"
 				/>	
 			</div>
 
+			<products-list-pagination 
+			:pages_info="pages_info"
+			/>
+
 		</div>
 	</div>
 
@@ -37,6 +41,7 @@ import { computed } from 'vue';
 import ProductCardBase from './ProductCardBase.vue';
 import ProductsListTopRow from './ProductsListTopRow.vue';
 import ProductsFilters from './ProductsFilters.vue';
+import ProductsListPagination from './ProductsListPagination.vue';
 
 
 export default {
@@ -45,9 +50,11 @@ export default {
 		ProductCardBase,
 		ProductsListTopRow,
 		ProductsFilters,
+		ProductsListPagination,
 	},
 	props: {
-		products: [],
+		products: Array,
+		pages_info: {},
 	},
 	setup () {
 		const store = useStore()
