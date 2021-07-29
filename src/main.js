@@ -14,12 +14,18 @@ import { Icon } from '@iconify/vue';
 // element plus import 
 import ElementPlus from 'element-plus'
 import 'element-plus/lib/theme-chalk/index.css'
+import VueLazyLoad from 'vue3-lazyload'
 
 const app = createApp(App)
 
 const router = createRouter({
 	history: createWebHashHistory(),
-	routes
+	routes,
+	scrollBehavior (to, from, savedPosition) {
+	console.log(to,  from , savedPosition)
+		return { top: 0 }
+		// return desired position
+	}
 })
 
 app.use(store)
@@ -27,5 +33,6 @@ app.use(router)
 app.use(Equal)
 app.use(Icon)
 app.use(ElementPlus)
+app.use(VueLazyLoad)
 
 app.mount('#app')

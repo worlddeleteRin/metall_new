@@ -5,7 +5,7 @@
             <div class="relative ">
                 <div class="relative flex justify-center h-48 overflow-hidden text-center">
                     <img class="object-contain" 
-					src="https://i.picsum.photos/id/924/1000/1000.jpg?hmac=NopRCaGnkvDju5hDrCebzIhZLFZvVD_4Xc1EppT3FSY" alt="">
+					v-lazy="product.imgsrc[0]" alt="">
                 </div>
             </div>
             <div class="relative">
@@ -18,7 +18,7 @@
 					</div>
                 </div>
                 <div class="mt-1 cursor-pointer hover:text-blue-900">
-					<router-link :to="'/product/123'">
+					<router-link :to="'/product/' + product.id">
 						{{ product.name }}
 					</router-link>	
 				</div>

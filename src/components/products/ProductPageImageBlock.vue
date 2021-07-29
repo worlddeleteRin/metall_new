@@ -9,10 +9,10 @@
 		:thumbs="{ swiper: thumbsSwiper }"
 	>
 		<swiper-slide
-		v-for="i in 4"
-		:key="i"
+		v-for="img in product.imgsrc"
+		:key="img"
 		>
-			<img :src="image_link" 
+			<img :src="img" 
 			class="object-contain w-full h-full"
 			/>
 		</swiper-slide>
@@ -30,12 +30,12 @@
 		<swiper-slide
 		:class="[i - 1 == current_thumb_active ? 'border-2':'border-none',
 		'max-w-max border-blue-700 rounded px-1 select-none']"
-		v-for="i in 4"
-		:key="i"
+		v-for="img in product.imgsrc"
+		:key="img"
 		>
 			<img
 			class="object-contain w-10 h-10"
-			:src="image_link" />
+			:src="img" />
 		</swiper-slide>
 	</swiper>
 	</div>
@@ -60,6 +60,9 @@
       Swiper,
       SwiperSlide,
     },
+	props: {
+		product: {},
+	},
 	setup () {
 	var thumbsSwiper = ref("");
 	var current_thumb_active = ref(0);

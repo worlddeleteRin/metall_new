@@ -3,9 +3,11 @@
 		class="flex flex-row items-center flex-1 w-full py-2 mx-1 border-4 border-black"
 		style="">
 			<!-- FIRST BLOCK -->	
-                <div class="relative flex justify-center flex-shrink w-4/12 overflow-hidden text-center">
-                    <img class="object-contain" 
-					src="https://i.picsum.photos/id/924/1000/1000.jpg?hmac=NopRCaGnkvDju5hDrCebzIhZLFZvVD_4Xc1EppT3FSY" alt="">
+                <div class="relative flex justify-center flex-shrink w-4/12 overflow-hidden text-center
+				max-h-[190px]">
+                    
+					<img class="object-contain" 
+					v-lazy="product.imgsrc[0]" alt="">
                 </div>
 			<!-- EOF FIRST BLOCK -->	
 
@@ -14,7 +16,7 @@
 			<div
 			class="flex flex-col w-full px-4 text-sm md:w-3/5 md:text-lg"
 			>
-				<router-link :to="'/product/123'">
+				<router-link :to="'/product/' + product.id">
 					{{ product.name }}
 				</router-link>
 				<div class="hidden mt-3 text-xs md:block md:text-sm">

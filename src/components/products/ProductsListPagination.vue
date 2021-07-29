@@ -24,15 +24,18 @@ export default {
 			}
 		}
 	},
-	setup () {
-		function clickPageChange (new_page) {
+	methods: {
+		clickPageChange (new_page) {
 			console.log('page is changed', new_page)
+			this.$emit('pageChange', new_page)	
 		}
+	},
+	setup () {
+
 		return {
 			// vars
 			// functions
-			clickPageChange,
 		}
-	}
+	},
 }
 </script>

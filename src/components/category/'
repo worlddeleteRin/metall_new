@@ -24,7 +24,7 @@
 
 	<div v-else>
 		<el-skeleton 
-			:rows="15" animated
+			:rows="5" animated
 		>
 		</el-skeleton>
 	</div>

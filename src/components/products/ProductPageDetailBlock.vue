@@ -2,16 +2,16 @@
 <div>
 	<!-- Product name block -->
 	<div class="mt-2 text-lg font-medium">
-		Робот пылесос Roborock S5 MAX (RU), белый
+		{{ product.name }} 
 	</div>
 	<!-- EOF Product name block -->
 	<!-- Product price block -->
 	<div class="my-3">
 		<span class="text-xl font-semibold text-red-600">
-			1100 &#8381;
+			{{ product.price }} &#8381;
 		</span>
 		<span class="text-sm text-black line-through">
-			1300 &#8381;
+			{{ product.price }} &#8381;
 		</span>
 	</div>
 	<!-- EOF Product price block -->
@@ -29,6 +29,9 @@ export default {
 	components: {
 		ProductPageAddcart,
 	},
+	props: {
+		product: {},
+	},	
 	setup () {
 		return {
 		}

@@ -7,11 +7,15 @@ class="relative flex flex-col w-full max-w-xs">
 		class="relative overflow-hidden bg-gray-100 h-28 rounded-md"
 	>
 		<img 
-			:src="category.imgsrc"
+			@load="onImageLoaded"
+			v-lazy="category.imgsrc"
 			class="object-cover w-full h-full rounded-md"
 		/>
 	</div>
 	<!-- eof category card image -->
+	<!-- category card image skeleton -->
+
+	<!-- eof category card image skeleton -->
 
 	<!-- category card name -->
 	<div
@@ -32,12 +36,20 @@ export default {
 	components: {
 	},
 	setup () {
+		var image_loaded = false
 		const category = {
 			"imgsrc": "https://i.picsum.photos/id/251/1000/1000.jpg?hmac=uWcm8cClStxAiVZ3BH1G0JOVRgCdbA20twJe2JCJGPg",
 			"name": "Металлическая мебель",
 		}
+		// functions
+		function onImageLoaded () {
+			image_loaded = true;
+		}
 		return {
-			category
+			category,
+			image_loaded,
+			// functions
+			onImageLoaded,
 		}
 	},
 }
