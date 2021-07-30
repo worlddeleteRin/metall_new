@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import BaseCatalogueComponent from '../components/catalogue/BaseCatalogueComponent.vue';
+import BaseCatalogueComponent from '@/components/catalogue/BaseCatalogueComponent.vue';
 export default {
 	name: "CataloguePage",
 	components: {

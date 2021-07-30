@@ -156,8 +156,8 @@
 
 <script>
 import { Icon } from '@iconify/vue';
-import HeaderLink from './HeaderLink.vue';
-import HeaderSearchInput from './HeaderSearchInput.vue';
+import HeaderLink from '@/components/header/HeaderLink.vue';
+import HeaderSearchInput from '@/components/header/HeaderSearchInput.vue';
 import { Popover, PopoverButton, PopoverGroup, PopoverPanel } from '@headlessui/vue'
 import {
   BookmarkAltIcon,

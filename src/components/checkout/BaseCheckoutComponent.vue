@@ -57,10 +57,10 @@ import { useStore } from 'vuex';
 // modules components
 import { ElNotification } from 'element-plus';
 // custom components
-import CheckoutDeliverySelect from './CheckoutDeliverySelect.vue';
-import CheckoutPaymentSelect from './CheckoutPaymentSelect.vue';
-import CheckoutUserInfo from './CheckoutUserInfo.vue';
-import CheckoutSummary from './CheckoutSummary.vue';
+import CheckoutDeliverySelect from '@/components/checkout/CheckoutDeliverySelect.vue';
+import CheckoutPaymentSelect from '@/components/checkout/CheckoutPaymentSelect.vue';
+import CheckoutUserInfo from '@/components/checkout/CheckoutUserInfo.vue';
+import CheckoutSummary from '@/components/checkout/CheckoutSummary.vue';
 
 export default {
 	name: "BaseCheckoutComponent",

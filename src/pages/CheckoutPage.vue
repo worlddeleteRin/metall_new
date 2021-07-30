@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import BaseCheckoutComponent from '../components/checkout/BaseCheckoutComponent.vue';
+import BaseCheckoutComponent from '@/components/checkout/BaseCheckoutComponent.vue';
 export default {
 	name: "CheckoutPage",
 	components: {

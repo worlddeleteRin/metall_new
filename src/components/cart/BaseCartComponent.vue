@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import CartProducts from './CartProducts.vue';
-import CartSummary from './CartSummary.vue';
+import CartProducts from '@/components/cart/CartProducts.vue';
+import CartSummary from '@/components/cart/CartSummary.vue';
 export default {
 	name: "BaseCartComponent",
 	components: {

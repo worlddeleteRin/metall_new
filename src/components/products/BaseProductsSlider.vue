@@ -29,7 +29,7 @@ import 'swiper/components/pagination/pagination.min.css';
 
 // SwiperCore.use([ Thumbs ]);
 
-import ProductCardGridView from './ProductCardGridView.vue';
+import ProductCardGridView from '@/components/products/ProductCardGridView.vue';
 
 export default {
 	name: "BaseProductsSlider",	

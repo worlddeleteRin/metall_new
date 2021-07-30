@@ -6,6 +6,7 @@ import {
 export default {
 	state: {
 		catalogue_products: [],
+		filters: [],
 		current_product: {},
 		pages: {},
 	},
@@ -19,6 +20,9 @@ export default {
 		setCatalogueProductsPages(state, page_info) {
 			state.pages = page_info
 		},
+		setCatalogueProductsFilters(state, filters) {
+			state.filters = filters
+		},
 	},
 	actions: {
 		async getCatalogueProducts({commit}, params) { 
@@ -29,6 +33,8 @@ export default {
 			commit('setCatalogueProducts', pr_data.products)
 			// set current page info
 			commit('setCatalogueProductsPages', pr_data.pages)
+			// set current filters
+			commit('setCatalogueProductsFilters', pr_data.filters)
 		},
 		async getCurrentProduct({commit}, product_id) {
 			var pr_data = await APIgetProductById(product_id)

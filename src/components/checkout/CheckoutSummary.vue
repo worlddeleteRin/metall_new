@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import CheckoutProductItem from './CheckoutProductItem.vue';
+import CheckoutProductItem from '@/components/checkout/CheckoutProductItem.vue';
 export default {
 	name: "CheckoutSummary",
 //	emits: ["checkoutClicked"],

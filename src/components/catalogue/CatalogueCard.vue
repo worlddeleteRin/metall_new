@@ -1,5 +1,5 @@
 <template>
-<router-link :to="'/category/1'" 
+<router-link :to="'/category/some-slug'" 
 class="relative flex flex-col w-full max-w-xs">
 
 	<!-- category card image -->

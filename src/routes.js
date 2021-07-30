@@ -43,7 +43,7 @@ const dynamic_routes = [
 		component: BaseProductPage,
 	},
 	{
-		path: '/category/:id',
+		path: '/category/:slug',
 		component:	CategoryPage,
 	},
 ]

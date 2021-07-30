@@ -6,7 +6,7 @@
 </template>
 
 <script>
- import MainSlider from '../components/MainSlider.vue';
+ import MainSlider from '@/components/MainSlider.vue';
  // testing 
 
 export default {

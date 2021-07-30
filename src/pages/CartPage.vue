@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import BaseCartComponent from '../components/cart/BaseCartComponent.vue';
+import BaseCartComponent from '@/components/cart/BaseCartComponent.vue';
 export default {
 	name: "CartPage",
 	components: {

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import CartProductItem from './CartProductItem.vue';
+import CartProductItem from '@/components/cart/CartProductItem.vue';
 export default {
 	name: "CartProducts",
 	components: {

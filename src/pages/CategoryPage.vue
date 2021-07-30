@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import BaseCategoryComponent from '../components/category/BaseCategoryComponent.vue';
+import BaseCategoryComponent from '@/components/category/BaseCategoryComponent.vue';
 export default {
 	name: "CategoryPage",
 	components: {

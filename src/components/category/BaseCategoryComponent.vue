@@ -7,18 +7,33 @@
 
 	products list is here
 
+
+	<div>{{ filters }}</div>
+
 	<div
 	v-if="catalogue_products.length > 0"
 	>
 
-	<products-list
-		:products="catalogue_products"	
-	/>
+	<products-list-top-row />
+	
+	
+	<div class="flex">
+		<products-filters 
+		:filters="filters"
+		class="flex-shrink-0 hidden border-4 border-green-500 md:flex w-52"
+		/>
+
+		<products-list
+			class="w-full"
+			:products="catalogue_products"	
+		/>
+	</div>
 
 	<products-list-pagination 
 		:pages_info="pages_info"
 		@pageChange="pageChanged($event)"
 	/>
+
 		
 	</div>
 
@@ -39,14 +54,18 @@ import { useRoute, useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 import { computed } from 'vue';
 // custom components
-import ProductsList from '../products/ProductsList.vue';
-import ProductsListPagination from '../products/ProductsListPagination.vue';
+import ProductsList from '@/components/products/ProductsList.vue';
+import ProductsListPagination from '@/components/products/ProductsListPagination.vue';
+import ProductsFilters from '@/components/products/ProductsFilters.vue';
+import ProductsListTopRow from '@/components/products/ProductsListTopRow.vue';
 
 export default {
 	name: "BaseCategoryComponent",
 	components: {
 		ProductsList,
 		ProductsListPagination,
+		ProductsFilters,
+		ProductsListTopRow,
 	},
 	async beforeMount () {
 		// testing dispatch theat async get products with api method 
@@ -65,6 +84,9 @@ export default {
 		// computed 
 		var catalogue_products = computed(() => store.state.products.catalogue_products)
 		var pages_info = computed(() => store.state.products.pages)
+		// testing code
+		var filters = computed(() => store.state.products.filters)
+		// eof testing code
 		//functions 
 		async function pageChanged (new_page) {
 			console.log('page changed from parent', new_page)
@@ -90,6 +112,8 @@ export default {
 			// computed
 			catalogue_products,
 			pages_info,
+			// testing filters
+			filters,
 			// functions
 			pageChanged,
 		}

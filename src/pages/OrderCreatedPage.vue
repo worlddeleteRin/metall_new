@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import BaseOrderCreatedComponent from '../components/BaseOrderCreatedComponent.vue';
+import BaseOrderCreatedComponent from '@/components/BaseOrderCreatedComponent.vue';
 export default {
 	name: "OrderCreatedPage",
 	components: {

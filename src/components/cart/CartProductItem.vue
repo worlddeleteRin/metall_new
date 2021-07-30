@@ -38,9 +38,9 @@ class="relative flex items-center w-full py-2 mx-4 mb-2 bg-white rounded-lg"
 </template>
 
 <script>
-import CartProductItemQuantity from './CartProductItemQuantity.vue';
-import CartProductItemAddFavorite from './CartProductItemAddFavorite.vue';
-import CartProductItemDelete from './CartProductItemDelete.vue';
+import CartProductItemQuantity from '@/components/cart/CartProductItemQuantity.vue';
+import CartProductItemAddFavorite from '@/components/cart/CartProductItemAddFavorite.vue';
+import CartProductItemDelete from '@/components/cart/CartProductItemDelete.vue';
 // import { Icon } from "@iconify/vue";
 export default {
 	name: "CartProductItem",

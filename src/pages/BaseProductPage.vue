@@ -47,9 +47,9 @@ import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
 import { computed } from 'vue';
 // custom components import 
-import ProductPageImageBlock from '../components/products/ProductPageImageBlock.vue';
-import ProductPageDetailBlock from '../components/products/ProductPageDetailBlock.vue';
-import ProductPageFeatureBlock from '../components/products/ProductPageFeatureBlock.vue';
+import ProductPageImageBlock from '@/components/products/ProductPageImageBlock.vue';
+import ProductPageDetailBlock from '@/components/products/ProductPageDetailBlock.vue';
+import ProductPageFeatureBlock from '@/components/products/ProductPageFeatureBlock.vue';
 // products slider import 
 // import BaseProductsSlider from '../components/products/BaseProductsSlider.vue';
 

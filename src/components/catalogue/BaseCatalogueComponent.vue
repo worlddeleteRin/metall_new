@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import CategoryCard from './CatalogueCard.vue';
+import CategoryCard from '@/components/catalogue/CatalogueCard.vue';
 export default {
 	name: "BaseCatalogueComponent",	
 	components: {

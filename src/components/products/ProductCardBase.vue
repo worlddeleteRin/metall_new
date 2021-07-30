@@ -15,8 +15,8 @@
 <script>
 import { useStore } from 'vuex';
 import { computed } from 'vue';
-import ProductCardListView from './ProductCardListView.vue';
-import ProductCardGridView from './ProductCardGridView.vue';
+import ProductCardListView from '@/components/products/ProductCardListView.vue';
+import ProductCardGridView from '@/components/products/ProductCardGridView.vue';
 
 export default {
 	name: "ProductCardBase",

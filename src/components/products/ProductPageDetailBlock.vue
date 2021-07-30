@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import ProductPageAddcart from './ProductPageAddcart.vue';
+import ProductPageAddcart from '@/components/products/ProductPageAddcart.vue';
 export default {
 	name: "ProductPageDetailBlock",
 	components: {

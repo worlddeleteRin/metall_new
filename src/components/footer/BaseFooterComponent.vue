@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import FooterBottom from './FooterBottom.vue';
+import FooterBottom from '@/components/footer/FooterBottom.vue';
 export default {
 	name: "BaseFooterComponent",
 	components: {
