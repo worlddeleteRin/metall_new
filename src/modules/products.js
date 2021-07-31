@@ -7,6 +7,7 @@ export default {
 	state: {
 		catalogue_products: [],
 		filters: [],
+		active_filters: {},
 		current_product: {},
 		pages: {},
 	},
@@ -23,6 +24,9 @@ export default {
 		setCatalogueProductsFilters(state, filters) {
 			state.filters = filters
 		},
+		setCatalogueProductsActiveFilters(state, active_filters) {
+			state.active_filters = active_filters
+		},
 	},
 	actions: {
 		async getCatalogueProducts({commit}, params) { 
@@ -35,6 +39,8 @@ export default {
 			commit('setCatalogueProductsPages', pr_data.pages)
 			// set current filters
 			commit('setCatalogueProductsFilters', pr_data.filters)
+			// set current active filters
+			commit('setCatalogueProductsActiveFilters', pr_data.active_filters)
 		},
 		async getCurrentProduct({commit}, product_id) {
 			var pr_data = await APIgetProductById(product_id)
